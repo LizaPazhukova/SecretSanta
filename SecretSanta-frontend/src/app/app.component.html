@@ -1,0 +1,36 @@
+<body>
+  <h1>Secret Santa</h1>
+  <h4>Add information about user</h4>
+  <form #myForm="ngForm" novalidate>
+    <div class="field">
+      <label>First Name: </label>
+      <input name="firstName" ngModel required firstName />
+    </div>
+    <div class="field">
+      <label>Last Name: </label>
+      <input name="lastName" ngModel required lastName />
+    </div>
+    <div class="form-group">
+      <button [disabled]="myForm.invalid" class="btn btn-default" (click)="submit(myForm)">Add</button>
+    </div>
+  </form>
+  <div>If you want to see who is giving a gift to whom - press this button</div>
+  <button (click)="showUsers()">Show Users</button>
+  <div *ngIf="show && users.length<1">
+    <p>There are not enough users yet</p>
+  </div>
+  <table class="table" *ngIf="show && users.length>1">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Gives to</th>
+        <th>Get gift from</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td> {{user.firstName}} {{user.lastName}}</td>
+        <td> {{user.match.firstName}} {{user.match.lastName}}</td>
+        <td> {{user.giver.firstName}} {{user.giver.lastName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+}
+h1 {
+  color: red;
+}
+button {
+  margin: 10px;
+}
+.table {
+	width: 95%;
+	margin: 20px;
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+}
+
+div.field {
+  padding-bottom: 5px;
+}
+div.field label {
+  display: block;
+}
